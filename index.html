@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SWASTHYA SETU</title>
+    </head>
+    <body>
+        <h1>Smart Rural Healthcare Management System</h1>
+        <p>Offline Healthcare Supports for Rural Communities</p>
+        {% if message %}
+            <p style="color:green">{{ message }}</p>
+        {% endif %}
+
+        <h2>Register Patient</h2>
+        <form action="{{ url_for('add_patient') }}" method="post">
+            <label>Name: <input type="text" name="name" required></label><br>
+            <label>Age: <input type="number" name="age"></label><br>
+            <label>Gender: <input type="text" name="gender"></label><br>
+            <label>Village: <input type="text" name="village"></label><br>
+            <label>Phone: <input type="text" name="phone"></label><br>
+            <label>Emergency Contact: <input type="text" name="emergency_contact"></label><br>
+            <label>Blood Group: <input type="text" name="blood_group"></label><br>
+            <button type="submit">Register</button>
+        </form>
+
+        <h2>Patients</h2>
+        {% if patients %}
+            <table border="1" cellpadding="6">
+                <tr><th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Village</th><th>Phone</th><th>Emergency</th><th>Blood Group</th><th>Actions</th></tr>
+                {% for p in patients %}
+                    <tr>
+                        <td>{{ p[0] }}</td>
+                        <td>{{ p[1] }}</td>
+                        <td>{{ p[2] }}</td>
+                        <td>{{ p[3] }}</td>
+                        <td>{{ p[4] }}</td>
+                        <td>{{ p[5] }}</td>
+                        <td>{{ p[6] }}</td>
+                        <td>{{ p[7] }}</td>
+                        <td>
+                            <a href="{{ url_for('edit_patient', pid=p[0]) }}">Edit</a>
+                            &nbsp;|
+                            <form action="{{ url_for('delete_patient_route', pid=p[0]) }}" method="post" style="display:inline" onsubmit="return confirm('Delete this patient?');">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No patients yet.</p>
+        {% endif %}
+    </body>
+</html>
