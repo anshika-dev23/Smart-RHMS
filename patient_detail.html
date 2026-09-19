@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Details | SwasthyaSetu</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h1>🩺 Patient Details</h1>
+
+        <p class="form-subtitle">
+            SwasthyaSetu Health Record
+        </p>
+
+
+        <!-- PATIENT INFORMATION -->
+
+        <div style="margin-top:30px; line-height:2;">
+
+            <p><strong>Patient ID:</strong> {{ patient[0] }}</p>
+
+            <p><strong>Name:</strong> {{ patient[1] }}</p>
+
+            <p><strong>Age:</strong> {{ patient[2] }}</p>
+
+            <p><strong>Gender:</strong> {{ patient[3] }}</p>
+
+            <p><strong>Village:</strong> {{ patient[4] }}</p>
+
+            <p><strong>Phone:</strong> {{ patient[5] }}</p>
+
+            <p><strong>Emergency Contact:</strong> {{ patient[6] }}</p>
+
+            <p><strong>Blood Group:</strong> {{ patient[7] }}</p>
+
+        </div>
+
+
+        <!-- LATEST VITALS -->
+
+        {% if vitals %}
+
+        <div style="
+            margin-top:30px;
+            padding:20px;
+            background:#f0fffb;
+            border-radius:18px;
+            border:2px solid #d5f3ec;
+        ">
+
+            <h2 style="color:#087f8c; margin-bottom:15px;">
+                ❤️ Latest Vitals
+            </h2>
+
+            <p>
+                <strong>Blood Pressure:</strong>
+                {{ vitals[0] }}
+            </p>
+
+            <p>
+                <strong>SpO₂:</strong>
+                {{ vitals[1] }}%
+            </p>
+
+            <p>
+                <strong>Temperature:</strong>
+                {{ vitals[2] }} °C
+            </p>
+
+            <p>
+                <strong>Pulse:</strong>
+                {{ vitals[3] }} BPM
+            </p>
+
+            <p>
+                <strong>Recorded At:</strong>
+                {{ vitals[4] }}
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+
+                {% if vitals[5] == "Attention Needed" %}
+
+                    <span style="color:#e63946; font-weight:bold;">
+                        ⚠️ Attention Needed
+                    </span>
+
+                {% elif vitals[5] == "Normal" %}
+
+                    <span style="color:#18a999; font-weight:bold;">
+                        ✅ Normal
+                    </span>
+
+                {% else %}
+
+                    <span style="color:#777;">
+                        ℹ️ {{ vitals[5] }}
+                    </span>
+
+                {% endif %}
+
+            </p>
+
+        </div>
+
+        {% else %}
+
+        <div style="
+            margin-top:30px;
+            padding:20px;
+            background:#fff8e8;
+            border-radius:18px;
+            text-align:center;
+        ">
+
+            <p>🩺 No vitals recorded yet.</p>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- HEALTH TIMELINE -->
+
+        <div style="
+            margin-top:30px;
+            padding:20px;
+            background:#fff;
+            border-radius:18px;
+            border:2px solid #e5f0ef;
+        ">
+
+            <h2 style="color:#087f8c; margin-bottom:20px;">
+                🕒 Health Timeline
+            </h2>
+
+            <div style="
+                padding:15px;
+                margin-bottom:12px;
+                background:#f0fffb;
+                border-radius:12px;
+            ">
+
+                📝 <strong>Patient Registered</strong>
+
+                <br>
+
+                <small>
+                    Patient profile created in SwasthyaSetu
+                </small>
+
+            </div>
+
+
+            {% if vitals %}
+
+            <div style="
+                padding:15px;
+                background:#fff8e8;
+                border-radius:12px;
+            ">
+
+                ❤️ <strong>Vitals Recorded</strong>
+
+                <br>
+
+                <small>
+
+                    BP: {{ vitals[0] }} |
+
+                    SpO₂: {{ vitals[1] }}% |
+
+                    Pulse: {{ vitals[3] }} BPM
+
+                </small>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <a href="{{ url_for('add_vitals', patient_id=patient[0]) }}"
+           class="primary-btn"
+           style="display:block; text-align:center; margin-top:20px;">
+
+            ❤️ Record Vitals
+
+        </a>
+
+
+        <a href="{{ url_for('patients') }}"
+           class="secondary-btn"
+           style="display:block; text-align:center; margin-top:25px;">
+
+            ← Back to Patients
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>

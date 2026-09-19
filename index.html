@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SwasthyaSetu | Smart Rural Healthcare</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">✚</span>
+            <span>Swasthya<span>Setu</span></span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#ai">AI Health</a>
+            <a href="#offline">Offline</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <a href="#" class="login-btn">Login</a>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🩺 Smart Healthcare for Rural Communities
+            </div>
+
+            <h1>
+                Healthcare that
+                <span>connects</span>
+                every community.
+            </h1>
+
+            <p>
+                SwasthyaSetu connects patients, doctors and rural
+                health workers through one smart, secure and
+                accessible healthcare platform.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{{ url_for('register') }}" class="primary-btn">
+                    Register Patient →
+                </a>
+
+                <a href="{{ url_for('patients') }}" class="secondary-btn">
+    View Patients →
+</a>
+
+                <a href="#features" class="secondary-btn">
+                    Explore Platform
+                </a>
+
+            </div>
+
+            <div class="hero-points">
+
+                <div>
+                    <span>✓</span>
+                    Secure
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    AI Assisted
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Offline Ready
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HEALTH CARD -->
+
+        <div class="hero-visual">
+
+            <div class="health-card">
+
+                <div class="card-top">
+
+                    <div>
+                        <small>Patient Health</small>
+                        <h3>Sita Devi</h3>
+                    </div>
+
+                    <div class="status">
+                        ● Active
+                    </div>
+
+                </div>
+
+
+                <div class="health-icon">
+                    ❤️
+                </div>
+
+                <div class="health-message">
+                    <strong>Health Overview</strong>
+                    <p>Today's health readings</p>
+                </div>
+
+
+                <div class="health-stats">
+
+                    <div class="stat-box blue">
+                        <span>🩸</span>
+                        <small>Blood Pressure</small>
+                        <strong>128/82</strong>
+                    </div>
+
+                    <div class="stat-box green">
+                        <span>💧</span>
+                        <small>SpO₂</small>
+                        <strong>98%</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="ai-alert">
+
+                    <div class="ai-symbol">
+                        ✨
+                    </div>
+
+                    <div>
+                        <strong>AI Health Insight</strong>
+                        <p>Health readings are being monitored.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features-section" id="features">
+
+        <div class="section-heading">
+
+            <span>OUR PLATFORM</span>
+
+            <h2>
+                Healthcare designed
+                <br>
+                <span>for real communities.</span>
+            </h2>
+
+            <p>
+                One platform connecting the people who make
+                rural healthcare possible.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card teal">
+
+                <div class="feature-icon">
+                    👩‍⚕️
+                </div>
+
+                <h3>ASHA Health Workers</h3>
+
+                <p>
+                    Register patients, record vitals,
+                    manage follow-ups and identify
+                    cases needing attention.
+                </p>
+
+                <a href="#">Explore →</a>
+
+            </div>
+
+
+            <div class="feature-card purple">
+
+                <div class="feature-icon">
+                    🤖
+                </div>
+
+                <h3>AI Health Agent</h3>
+
+                <p>
+                    Summarize health records, identify
+                    trends and provide AI-assisted
+                    health information.
+                </p>
+
+                <a href="#">Explore →</a>
+
+            </div>
+
+
+            <div class="feature-card green">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>Smart Monitoring</h3>
+
+                <p>
+                    Track BP, SpO₂, temperature and
+                    pulse with smart attention alerts.
+                </p>
+
+                <a href="#">Explore →</a>
+
+            </div>
+
+
+            <div class="feature-card orange">
+
+                <div class="feature-icon">
+                    📶
+                </div>
+
+                <h3>Offline First</h3>
+
+                <p>
+                    Continue recording healthcare data
+                    even when internet connectivity
+                    is unavailable.
+                </p>
+
+                <a href="#">Explore →</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI SECTION -->
+
+    <section class="ai-section" id="ai">
+
+        <div class="ai-content">
+
+            <div class="ai-badge">
+                ✨ AI POWERED HEALTHCARE
+            </div>
+
+            <h2>
+                Turn health records into
+                <span>useful insights.</span>
+            </h2>
+
+            <p>
+                SwasthyaSetu's AI Health Agent can help
+                summarize patient records, identify health
+                trends and provide basic health information
+                to healthcare workers and doctors.
+            </p>
+
+            <div class="ai-list">
+
+                <div>✓ Patient health summary</div>
+                <div>✓ Health trend identification</div>
+                <div>✓ AI-assisted alerts</div>
+                <div>✓ Basic health guidance</div>
+
+            </div>
+
+        </div>
+
+
+        <div class="ai-card">
+
+            <div class="ai-card-header">
+                <span>✨</span>
+                AI Health Agent
+            </div>
+
+            <div class="chat-message user-message">
+                Patient has repeated high BP readings.
+            </div>
+
+            <div class="chat-message ai-message">
+                <strong>Health Insight</strong>
+                <br>
+                Repeated elevated readings were found
+                in the patient's recent health records.
+            </div>
+
+            <div class="ai-input">
+                Ask about patient health...
+                <span>→</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFLINE SECTION -->
+
+    <section class="offline-section" id="offline">
+
+        <div class="offline-card">
+
+            <div class="offline-icon">
+                📶
+            </div>
+
+            <div>
+
+                <span class="small-title">
+                    OFFLINE-FIRST HEALTHCARE
+                </span>
+
+                <h2>
+                    Healthcare shouldn't stop
+                    when the internet does.
+                </h2>
+
+                <p>
+                    Health workers can continue recording
+                    patient information offline. Data can
+                    synchronize when connectivity returns.
+                </p>
+
+                <div class="sync-flow">
+
+                    <span>Save</span>
+                    <b>→</b>
+                    <span>Store</span>
+                    <b>→</b>
+                    <span>Sync</span>
+                    <b>→</b>
+                    <span>Connected</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about-section" id="about">
+
+        <div>
+
+            <span class="small-title">
+                ABOUT SWASTHYASETU
+            </span>
+
+            <h2>
+                One bridge between
+                communities and healthcare.
+            </h2>
+
+        </div>
+
+        <p>
+            SwasthyaSetu is a smart rural healthcare
+            management platform designed to connect
+            patients, doctors and rural health workers
+            while supporting secure records, smart
+            monitoring, AI-assisted insights and
+            offline healthcare workflows.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            ✚ SwasthyaSetu
+        </div>
+
+        <p>
+            Smart • Secure • Accessible Healthcare
+        </p>
+
+        <p class="copyright">
+            © 2026 SwasthyaSetu
+        </p>
+
+    </footer>
+
+
+</body>
+</html>

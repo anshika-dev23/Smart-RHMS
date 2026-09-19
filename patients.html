@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patients | SwasthyaSetu</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h1>🩺 Patient Records</h1>
+
+        <p class="form-subtitle">
+            SwasthyaSetu Registered Patients
+        </p>
+
+        {% if patients %}
+
+        <table style="width:100%; border-collapse:collapse; margin-top:25px;">
+
+            <tr style="background:#087f8c; color:white;">
+                <th style="padding:12px;">ID</th>
+                <th style="padding:12px;">Name</th>
+                <th style="padding:12px;">Age</th>
+                <th style="padding:12px;">Gender</th>
+                <th style="padding:12px;">Village</th>
+            </tr>
+
+            {% for patient in patients %}
+
+            <tr style="text-align:center; border-bottom:1px solid #ddd;">
+
+                <td style="padding:12px;">
+                    <a href="{{ url_for('patient_detail', patient_id=patient[0]) }}"
+       style="color:#087f8c; font-weight:700; text-decoration:none;">
+        {{ patient[1] }}
+    </a>
+
+                </td>
+                <td style="padding:12px;">{{ patient[1] }}</td>
+                <td style="padding:12px;">{{ patient[2] }}</td>
+                <td style="padding:12px;">{{ patient[3] }}</td>
+                <td style="padding:12px;">{{ patient[4] }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+        {% else %}
+
+        <p style="text-align:center; margin-top:30px;">
+            No patients registered yet.
+        </p>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

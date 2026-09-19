@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Record Vitals | SwasthyaSetu</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h1>❤️ Record Vitals</h1>
+
+        <p class="form-subtitle">
+            Enter patient's latest health measurements
+        </p>
+
+        <form method="POST">
+
+            <label>Blood Pressure</label>
+            <input type="text"
+                   name="blood_pressure"
+                   placeholder="Example: 120/80"
+                   required>
+
+            <label>SpO₂ (%)</label>
+            <input type="number"
+                   name="spo2"
+                   placeholder="Example: 98"
+                   min="0"
+                   max="100"
+                   required>
+
+            <label>Temperature (°C)</label>
+            <input type="number"
+                   name="temperature"
+                   placeholder="Example: 98.6"
+                   step="0.1"
+                   required>
+
+            <label>Pulse (BPM)</label>
+            <input type="number"
+                   name="pulse"
+                   placeholder="Example: 72"
+                   min="0"
+                   required>
+
+            <button type="submit">
+                Save Vitals →
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
